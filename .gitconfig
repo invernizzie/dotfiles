@@ -1,3 +1,4 @@
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	brr = !git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	cdiff = !git diff \"$@\" | cdiff -sw 0
